@@ -1,15 +1,15 @@
 SET search_path TO crowdfunding;
 CREATE TABLE "category" (
-    "category_id" VARCHAR(10)   NOT NULL,
-    "category" VARCHAR(255)   NOT NULL,
+    "category_id" VARCHAR NOT NULL,
+    "category" VARCHAR NOT NULL,
     CONSTRAINT "pk_category" PRIMARY KEY (
         "category_id"
      )
 );
 
 CREATE TABLE "subcategory" (
-    "subcategory_id" VARCHAR(10)   NOT NULL,
-    "subcategory" VARCHAR(255)   NOT NULL,
+    "subcategory_id" VARCHAR NOT NULL,
+    "subcategory" VARCHAR NOT NULL,
     CONSTRAINT "pk_subcategory" PRIMARY KEY (
         "subcategory_id"
      )
@@ -17,9 +17,9 @@ CREATE TABLE "subcategory" (
 
 CREATE TABLE "contact" (
     "contact_id" INT   NOT NULL,
-    "first_name" VARCHAR(255)   NOT NULL,
-    "last_name" VARCHAR(255)   NOT NULL,
-    "email" VARCHAR(255)   NOT NULL,
+    "first_name" VARCHAR NOT NULL,
+    "last_name" VARCHAR NOT NULL,
+    "email" VARCHAR NOT NULL,
     CONSTRAINT "pk_contact" PRIMARY KEY (
         "contact_id"
      )
@@ -28,8 +28,8 @@ CREATE TABLE "contact" (
 CREATE TABLE "campaign" (
     "cf_id" INT   NOT NULL,
     "contact_id" INT   NOT NULL,
-    "company_name" VARCHAR(255)   NOT NULL,
-    "description" VARCHAR(255)   NOT NULL,
+    "company_name" VARCHAR NOT NULL,
+    "description" VARCHAR NOT NULL,
     "goal" FLOAT   NOT NULL,
     "pledged" FLOAT   NOT NULL,
     "outcome" VARCHAR(20)   NOT NULL,
@@ -38,8 +38,8 @@ CREATE TABLE "campaign" (
     "currency" VARCHAR(5)   NOT NULL,
     "launched_date" date   NOT NULL,
     "end_date" date   NOT NULL,
-    "category_id" VARCHAR(10)   NOT NULL,
-    "subcategory_id" VARCHAR(10)   NOT NULL,
+    "category_id" VARCHAR NOT NULL,
+    "subcategory_id" VARCHAR NOT NULL,
     CONSTRAINT "pk_campaign" PRIMARY KEY (
         "cf_id"
      )
